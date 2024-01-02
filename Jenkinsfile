@@ -7,7 +7,7 @@ pipeline{
     }
     
     environment {
-        APP_NAME = "application"
+        APP_NAME = "production-pipeline "
         
     }
     stages{
