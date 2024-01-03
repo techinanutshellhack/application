@@ -20,7 +20,7 @@ pipeline{
     
         stage("Checkout from SCM"){//check out the code from git repo into the jenkins workspace 
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/techinanutshellhack/application.git'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/techinanutshellhack/application'
             }
 
         }
@@ -29,7 +29,7 @@ pipeline{
             steps {
                 sh """
                     cat deployment.yaml
-                    sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+                    sed -i 's/${APP_NAME}/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
                     cat deployment.yaml
                 """
             }
