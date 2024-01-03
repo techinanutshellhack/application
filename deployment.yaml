@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: testdeployment
-        image: sweetpeaito/production-pipeline:latest
+        image: sweetpeaito/production-pipeline:1.0.0-53
         ports:
         - containerPort: 80
 
