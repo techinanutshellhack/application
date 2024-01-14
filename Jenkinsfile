@@ -1,8 +1,8 @@
-
+//this pipeline updates the deployment files using jenkins pipeline . the updated files are then pushed to git which triggers argo cd to deploy them on the destination k8 cluster
 pipeline{
     agent{  //the agent is the vm that the all the dependencies for the jenkins pipeline to run in will be installed . in production , use a dedicated agent
          //label "built-in"
-         label "wsl"
+         label "jenkins-agent"
         //docker { image 'node:20.10.0-alpine3.19' }
     }
     
