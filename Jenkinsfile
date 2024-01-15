@@ -29,11 +29,12 @@ pipeline{
             steps {
                 sh """
                     cat deployment.yaml
-                    sed -i 's/${APP_NAME}/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
+                    sed -i "s/${APP_NAME}/${APP_NAME}:${IMAGE_TAG}/g" "deployment.yaml"
                     cat deployment.yaml
                 """
+                //sed -i "s/$search_string/$replace_string/g" "$file"
             }
-
+//sed -i 's/${APP_NAME}/${APP_NAME}:${IMAGE_TAG}/g' deployment.yaml
         }
 
         stage("Push the changed deploymentfile to Git"){// test application with maven
