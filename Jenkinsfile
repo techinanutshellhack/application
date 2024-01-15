@@ -20,7 +20,7 @@ pipeline{
     
         stage("Checkout from SCM"){//check out the code from git repo into the jenkins workspace 
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/techinanutshellhack/application'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/techinanutshellhack/application.git'
             }
 
         }
